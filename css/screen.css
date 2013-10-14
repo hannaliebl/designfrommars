@@ -1,0 +1,972 @@
+/*
+Author/Designer/Developer: Hanna Liebl, hannaliebl.com
+project began June 2013, last modified August 2013
+COMPASS and SASS helped
+Wordpress (html5blank theme as base) + Woocommerce make this site work
+Typekit and icomoon make it pertty
+1140 grid system/hacked together, but it works, yeah?
+Mobile-first!
+comments, critiques, questions: hanna@hannaliebl.com
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: baseline;
+  height: auto;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+/******* TYPOGRAPHY *******/
+/*************************/
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #c69b2d;
+}
+
+p {
+  font-family: "proxima-nova", helvetica neu, helvetica, sans-serif;
+  font-size: 14pt;
+  line-height: 17pt;
+  padding: 10px 0;
+}
+
+h1, h2, h3 {
+  font-family: "brandon-grotesque", futura, sans-serif;
+  font-weight: 600;
+  padding: 15px 0 10px 0;
+}
+
+h1 {
+  font-size: 24pt;
+}
+
+h2 {
+  font-size: 20pt;
+}
+
+h3 {
+  font-size: 16pt;
+}
+
+/*** Specific Header Styles ***/
+/* Remember this is mobile-first */
+/**home header has big(ger) text**/
+#home_header_description h1 {
+  font-size: 38pt;
+  font-family: "coquette", sans-serif;
+  font-weight: 700;
+  line-height: 44pt;
+  color: #c69b2d;
+  text-shadow: 2px 0px 1px black;
+}
+
+#home_header_description h2 {
+  font-size: 16pt;
+  color: #fff;
+  padding: 0;
+  font-weight: 400;
+  text-shadow: 2px 0px 1px black;
+}
+
+/**** rest of the headers use small text for "Design from Mars" ***/
+#header_description h1 {
+  font-size: 20pt;
+  font-family: "coquette", sans-serif;
+  font-weight: 700;
+  color: #c69b2d;
+  text-shadow: 2px 0px 1px black;
+}
+
+#header_description h2 {
+  font-size: 38pt;
+  color: #fff;
+  padding: 0;
+  font-weight: 700;
+  text-shadow: 2px 0px 1px black;
+}
+
+/*** "Shop All" link on homepage ***/
+.shopall {
+  font-size: 16pt;
+  color: #a09f9f;
+  border: 2px solid #a09f9f;
+  display: inline-block;
+  padding: 8px;
+}
+
+.shopall:hover {
+  color: #c69b2d;
+  border: 2px solid #c69b2d;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+}
+
+/**** Forms, inputs, etc ***/
+input, select, textarea, button {
+    color: #a09f9f;
+    background-color: black;
+  border: 1px solid #2D2D2D;
+}
+
+textarea:focus, input:focus {
+    color: #a09f9f;
+}
+
+/***** Outlined "button"/important link styles *****/
+.button {
+  color: #a09f9f;
+  border: 2px solid #a09f9f;
+  display: inline-block;
+  padding: 4px;
+  margin: 3px 0;
+}
+
+.button:hover {
+  color: #c69b2d;
+  border: 2px solid #c69b2d;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+}
+
+.single_add_to_cart_button {
+  font-size: 16pt;
+  font-family: "proxima-nova";
+  font-weight: 600;
+  padding: 5px 8px;
+  color: white;
+  border: 2px solid #a09f9f;
+  display: inline-block;
+  margin: 15px 0;
+}
+
+.add_to_cart_button {
+  margin: 10px 0;
+}
+
+span.price {
+  display: block;
+}
+
+/**** Iconfont ***/
+@font-face {
+  font-family: 'icomoon';
+  src: url("../img/fonts/icomoon.eot");
+  src: url("../img/fonts/icomoon.eot?#iefix") format("embedded-opentype"), url("../img/fonts/icomoon.woff") format("woff"), url("../img/fonts/icomoon.ttf") format("truetype"), url("../img/fonts/icomoon.svg#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+[data-icon]:before {
+  font-family: 'icomoon';
+  content: attr(data-icon);
+  speak: none;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  font-size: 10pt;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+.icon-facebook, .icon-twitter, .icon-menu, .icon-cart, .icon-mail, .icon-arrow-down {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+.icon-cart {
+  font-size: 16pt;
+}
+
+.icon-facebook, .icon-twitter, .icon-mail {
+  font-size: 40pt;
+}
+
+.icon-arrow-down {
+  font-size: 18pt;
+}
+
+.icon-facebook:before {
+  content: "\21";
+}
+
+.icon-twitter:before {
+  content: "\74";
+}
+
+.icon-menu:before {
+  content: "\6e";
+}
+
+.icon-cart:before {
+  content: "\23";
+}
+
+.icon-mail:before {
+  content: "\24";
+}
+
+.icon-arrow-down:before {
+  content: "\25";
+}
+
+.mobile-menu-container {
+  font-size: 22pt;
+  font-family: "brandon-grotesque", futura, sans-serif;
+  margin: 5px 0;
+}
+
+.fs2 {
+  font-size: 30pt;
+}
+
+.woocommerce .quantity .plus, .woocommerce-page .quantity .plus, .woocommerce #content .quantity .plus, .woocommerce-page #content .quantity .plus, .woocommerce .quantity .minus, .woocommerce-page .quantity .minus, .woocommerce #content .quantity .minus, .woocommerce-page #content .quantity .minus {
+display: block;
+padding: 0;
+margin: 0;
+position: absolute;
+text-align: center;
+vertical-align: text-top;
+width: 20px;
+height: 15px;
+overflow: visible;
+text-decoration: none;
+font-weight: bold;
+cursor: pointer;
+line-height: 13px;
+font-size: 12px;
+-webkit-border-radius: 2px;
+-moz-border-radius: 2px;
+border-radius: 2px;
+color: #5e5e5e;
+text-shadow: 0 1px 0 rgba(255,255,255,0.8);
+border: 1px solid #c8bfc6;
+background: #f7f6f7;
+background: -webkit-gradient(linear,left top,left bottom,from(#f7f6f7),to(#e0dadf));
+background: -webkit-linear-gradient(#f7f6f7,#e0dadf);
+background: -moz-linear-gradient(center top,#f7f6f7 0,#e0dadf 100%);
+background: -moz-gradient(center top,#f7f6f7 0,#e0dadf 100%);
+-webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,0.075),inset 0 1px 0 rgba(255,255,255,0.3),0 1px 2px rgba(0,0,0,0.1);
+-moz-box-shadow: inset 0 -1px 0 rgba(0,0,0,0.075),inset 0 1px 0 rgba(255,255,255,0.3),0 1px 2px rgba(0,0,0,0.1);
+box-shadow: inset 0 -1px 0 rgba(0,0,0,0.075),inset 0 1px 0 rgba(255,255,255,0.3),0 1px 2px rgba(0,0,0,0.1);
+}
+
+
+
+/******** LAYOUT (grid system, etc. Mobile-first!) *******/
+/********************************************************/
+
+body {
+  background: black;
+  color: #a09f9f;
+  font-family: "proxima-nova", helvetica neu, helvetica, sans-serif;
+}
+
+.container {
+  width: 100%;
+  padding: 0 30px;
+}
+
+.content {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.center-text {
+  text-align: center;
+}
+
+#cart {
+  background: black;
+  width: 100%;
+  border-bottom: 1px solid grey;
+}
+
+header#default_header, header#store_header {
+  background: url("../img/home-header-mobile.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 200px;
+}
+
+header#home {
+   background: url("../img/home-header-mobile.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 250px;
+}
+
+nav#main {
+  width: 100%;
+  display: inline-block;
+  background: #2b2b2b;
+}
+
+nav#main li {
+  float: left;
+  width: 100%;
+  background: #2b2b2b;
+  font-family: "brandon-grotesque", futura, sans-serif;
+  font-size: 20pt;
+  padding: 10px 0;
+  text-align: center;
+}
+
+nav#main li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+nav#main li a:hover {
+  color: #c69b2d;
+}
+
+nav#bottom {
+  padding: 40px 0 20px 0;
+}
+
+a.social-icon {
+  padding: 0 5px;
+}
+
+.copyright {
+  padding-bottom: 5px;
+}
+
+.credit {
+  font-size: 10pt;
+  padding-bottom: 15px;
+}
+
+ul.quick_links {
+  margin-top: 17px;
+  font-size: 14pt;
+}
+
+ul#menu-cart {
+  font-size: 14pt;
+}
+
+ul.sub-menu {
+  display: none;
+  cursor: default;
+}
+
+ul.sub-menu li {
+  float: none;
+  background: black;
+  padding: 5px;
+  font-size: 12pt;
+}
+
+.product-search input[type=text] {
+  width: 145px;
+  background-color: #2b2b2b;
+  border: 1px solid #333;
+  font-size: 12pt;
+  padding: 1px 2px;
+  font-family: "proxima-nova", helvetica neu, helvetica, sans-serif;
+}
+
+.product-search input[type=submit] {
+  background-color: #000;
+  color: #a09f9f;
+  border: 1px solid #a09f9f;
+  display: inline-block;
+  font-size: 12pt;
+  padding: 1px 2px;
+  font-family: "proxima-nova", helvetica neu, helvetica, sans-serif;
+}
+
+.product-search input[type=submit]:hover {
+  color: #c69b2d;
+  border: 1px solid #c69b2d;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+}
+
+.cursor { cursor: pointer; cursor: hand; }
+
+.hidden {
+  display: none;
+}
+
+/* slightly hacky class to add to ul elements in woocommerce tabbed display to get rid of the tabbed nav */
+.true-hidden {
+  display: none;
+}
+
+section#intro {
+  margin: 30px auto;
+}
+
+.products li {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.products li h1 {
+  font-size: 18pt;
+  font-weight: 500;
+  color: #565656;
+  padding: 5px 0 10px 0;
+}
+
+.products li h2 {
+  font-size: 13pt;
+  font-weight: 400;
+  color: #7F7F7F;
+  padding: 0 0 20px 0;
+}
+
+.products li a:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+}
+
+.home-products li a:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+}
+
+ul.page-numbers {
+  text-align: center;
+  display: block;
+  width: 100px;
+  margin: 0 auto;
+}
+
+ul.page-numbers li {
+  float: left;
+  text-align: center;
+  padding: 5px;
+}
+
+footer#main {
+  background: #2b2b2b;
+}
+
+/*****Helper Classes*****/
+.clearfix:before,
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/* line 115, ../sass/layout.scss */
+.clearfix {
+  zoom: 1;
+  /* IE < 8 */
+}
+
+.clear {
+  clear: both;
+}
+
+section#single-product {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+  ul.tabs li {
+    float: left;
+  }
+
+   ul.tabs li a {
+    display: block;
+    padding: 10px;
+  }
+
+img.attachment-shop_single {
+padding: 0 0 20px 0;
+  }
+
+div.thumbnails {
+  display: inline-block;
+  margin-bottom: 20px;
+  max-width: 570px;
+}
+
+.woocommerce-breadcrumb {
+  padding-bottom: 20px;
+}
+
+  .widget_product_categories {
+    background-color: #2b2b2b;
+    padding: 0px 5px 5px 8px;
+  }
+
+  .widget_product_categories li {
+    padding: 2px 0;
+  }
+
+  .widget_product_search {
+    margin: 0;
+    padding: 0;
+  }
+/*
+  .filter-products {
+    background-color: #2b2b2b;
+    padding: 0 0 15px 0;
+  }*/
+
+  #tab-reviews, #tab-additional_information, #tab-description {
+    clear: both;
+  }
+
+  /* cart page */
+  table.shop_table.cart thead {
+    background-color: #2D2D2D;  
+  }
+
+table.shop_table.cart th, table.shop_table.cart td {
+    padding: 10px;
+  }
+
+table.shop_table.cart th {
+  font-size: 18pt;
+}
+
+table.shop_table.cart td {
+  text-align: center;
+}
+
+table.shop_table.cart td h1 {
+  font-size: 16pt;
+  font-family: "proxima-nova", helvetica neu, helvetica, sans-serif;
+  font-weight: 400;
+  padding: 0;
+}
+
+tr.cart_table_item { 
+  background-color: #242424;
+}
+
+/* Zebra striping */
+tr.cart_table_item:nth-of-type(odd) { 
+  background-color: #191919;
+}
+
+
+/*****/
+
+
+@media 
+only screen and (max-width: 543px)  {
+
+  /* Force table to not be like tables anymore */
+  table.shop_table, thead.shop_table, tbody.shop_table, th.shop_body, td.shop_body, tr.shop_body { 
+    display: block; 
+  }
+  
+  /* Hide table headers (but not display: none;, for accessibility) */
+  thead tr { 
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  
+  tr { border: 1px solid #2e2e2e; }
+  
+  td { 
+    /* Behave  like a "row" */
+    border: none;
+    position: relative;
+    padding-left: 50%; 
+  }
+  
+  td:before { 
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%; 
+    padding-right: 10px; 
+    white-space: nowrap;
+  }
+}
+  
+  /*
+  Label the data
+  */
+  /*td:nth-of-type(1):before { content: "First Name"; }
+  td:nth-of-type(2):before { content: "Last Name"; }
+  td:nth-of-type(3):before { content: "Job Title"; }
+  td:nth-of-type(4):before { content: "Favorite Color"; }
+  td:nth-of-type(5):before { content: "Wars of Trek?"; }
+  td:nth-of-type(6):before { content: "Porn Name"; }
+  td:nth-of-type(7):before { content: "Date of Birth"; }
+  td:nth-of-type(8):before { content: "Dream Vacation City"; }
+  td:nth-of-type(9):before { content: "GPA"; }
+  td:nth-of-type(10):before { content: "Arbitrary Data"; }
+}*/
+
+
+/********/
+
+.remove {
+  font-size: 25pt;
+}
+
+input[type="number"] {
+  width: 50px;
+}
+
+.onethird-thumbnail {
+
+    float: left;
+    width: 33.3%;
+    margin-bottom: -5px;
+  }
+
+
+/******** MEDIA QUERIES **********/
+/*** This site only uses two breakpoints, 960px and 1140px.
+     Mobile version is generally just one column, would
+     work on smaller tablets and phones. **************/
+
+/* "iPads" (landscape-ish) ----------- */
+@media handheld, only screen and (min-width: 960px) {
+
+/* Make the header smaller to conserve screen space ****/
+  header#home {
+    height: 400px;
+     margin-top: 50px;
+  }
+
+  header#default_header, header#store_header {
+    height: 200px;
+    margin-top: 50px;
+  }
+
+.product-search {
+  float: right;
+}
+
+nav#cart_nav {
+  float: right;
+}
+
+/*force height to account for title running onto second line*/
+.home-products li {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  height: 464px;
+  overflow: hidden;
+}
+
+/* line 66, ../sass/layout.scss */
+nav#cart_nav li {
+  float: left;
+}
+
+nav#cart_nav ul.sub-menu li {
+  float: none;
+}
+
+#cart {
+  background: black;
+  position: fixed;
+  height: 50px;
+  top: 0px;
+  width: 100%;
+  z-index: 1;
+  border-bottom: 1px solid grey;
+}
+
+ul.quick_links li {
+  float: left;
+  padding-right: 8px;
+}
+
+ul#menu-cart li {
+ padding-right: 8px; 
+}
+
+ul.sub-menu {
+  position: absolute;
+}
+
+ul.sub-menu li {
+  float: none;
+  z-index: 2;
+}
+
+  /* line 124, ../sass/layout.scss */
+  .container {
+    width: 100%;
+    padding: 0 2%;
+  }
+
+  .content {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+  /* line 128, ../sass/layout.scss */
+  .container960 {
+    width: 960px;
+    margin: 0 auto;
+  }
+
+  .onefourth {
+    float: left;
+    width: 23.4%;
+    margin-right: 1.6%;
+  }
+
+  .one-fourth:last-child {
+    margin-right: 0;
+  }
+
+  .threefourths {
+    float: left;
+    width: 75%;
+    margin-right: 0%;
+  }
+
+  .three-fourths:last-child {
+    margin-right: 0;
+  }
+
+  /* line 132, ../sass/layout.scss */
+  .onethird {
+    float: left;
+    width: 33%;
+    padding-right: 3%;
+  }
+
+  .half {
+    float: left;
+    width: 48%;
+    padding-right: 2%;
+  }
+
+  .half:last-child {
+    padding-right: 0;
+  }
+
+  p.woocommerce-result-count {
+  padding: 0;
+}
+
+  /* line 137, ../sass/layout.scss */
+.twothirds {
+    float: left;
+    width: 67%;
+    padding-right: 3%;
+  }
+
+.twothirds:last-child {
+    padding-right: 0;
+  }
+
+.threeeighths {
+    float: left;
+    width: 35.5%;
+    padding-right: 2%;
+  }
+
+.oneeighth {
+    float: left;
+    width: 10.5%;
+    padding-right: 2%;
+  }
+
+.oneeighth:last-child {
+  padding-right: 0;
+}
+
+  /* line 141, ../sass/layout.scss */
+  .toggle {
+    display: none;
+  }
+
+  /* line 144, ../sass/layout.scss */
+ul.hidden {
+    display: block;
+    width: 100%;
+  }
+
+  /* line 148, ../sass/layout.scss */
+nav#main li {
+    width: 16.6%;
+    font-size: 16.5pt;
+    text-align: left;
+  }
+
+  /* line 153, ../sass/layout.scss */
+/*  #header_description h1 {
+    font-size: 55pt;
+    line-height: 60pt;
+  }*/
+
+#home_header_description h1 {
+  font-size: 58pt;
+  font-weight: 700;
+  line-height: 66pt;
+  color: #c69b2d;
+  text-shadow: 2px 0px 1px black;
+}
+
+#home_header_description h2 {
+  font-size: 22pt;
+  color: #fff;
+  padding: 0;
+  font-weight: 400;
+  text-shadow: 2px 0px 1px black;
+}
+
+#header_description h1 {
+  font-size: 24pt;
+  font-weight: 700;
+  color: #c69b2d;
+  text-shadow: 2px 0px 1px black;
+}
+
+#header_description h2 {
+  font-size: 40pt;
+  color: #fff;
+  padding: 0;
+  font-weight: 700;
+  text-shadow: 2px 0px 1px black;
+}
+
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+  aside {
+    float: right;
+  }
+
+/**** "Desktops" ****/
+@media handheld, only screen and (min-width: 1140px) {
+
+  header#home {
+    background: url("../img/home-header-full.jpg") no-repeat center center;
+  }
+
+  .container {
+    width: 1140px;
+    margin: 0 auto;
+  }
+
+  .content {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+  nav#main li {
+    width: 16.6%;
+    font-size: 19pt;
+  }
+}
