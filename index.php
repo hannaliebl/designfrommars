@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<section class="content container" id="intro" role="main">
+<section class="content container" role="main">
             <div class="container960">
 
     <?php if (have_posts()) : ?>

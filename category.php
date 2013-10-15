@@ -1,17 +1,17 @@
 <?php get_header(); ?>
+
+	<section class="content" role="main">
+		<div class="container960">
 	
-	<!-- section -->
-	<section role="main">
-	
-		<h1><?php _e( 'Categories for', 'html5blank' ); the_category(); ?></h1>
+		<?php _e( 'Showing Posts Filed Under: ', 'html5blank' ); the_category(' '); ?>
 	
 		<?php get_template_part('loop'); ?>
 		
 		<?php get_template_part('pagination'); ?>
+
+		</div>
 	
 	</section>
-	<!-- /section -->
 	
-<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

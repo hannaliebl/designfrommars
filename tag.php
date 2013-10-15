@@ -1,17 +1,16 @@
 <?php get_header(); ?>
 	
-	<!-- section -->
-	<section role="main">
+	<section class="content" role="main">
+		<div class="container960">
 	
-		<h1><?php _e( 'Tag Archive: ', 'html5blank' ); echo single_tag_title('', false); ?></h1>
+		<?php _e( 'Showing Posts Tagged: ', 'html5blank' ); echo single_tag_title('', false); ?>
 	
 		<?php get_template_part('loop'); ?>
 		
 		<?php get_template_part('pagination'); ?>
 	
+		</div>
 	</section>
-	<!-- /section -->
 	
-<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>
