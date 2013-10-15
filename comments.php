@@ -1,7 +1,7 @@
-<div class="comments">
+<section id="comments">
 	<?php if (post_password_required()) : ?>
 	<p><?php _e( 'Post is password protected. Enter the password to view any comments.', 'html5blank' ); ?></p>
-</div>
+
 
 	<?php return; endif; ?>
 
@@ -19,6 +19,17 @@
 	
 <?php endif; ?>
 
-<?php comment_form(); ?>
+<?php $comments_args = array(
+        // change the title of the reply section
+        'title_reply'=>'<h2>Write a Comment</h2>',
+        // remove "Text or HTML to be displayed after the set of comment fields"
+        'comment_notes_after' => '',
+        // redefine your own textarea (the comment body)
+        'comment_field' =>  '<p><label for="comment">' . _x( 'Comment:', 'noun' ) .
+    '</label></p><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true">' .
+    '</textarea>',
+);
 
-</div>
+comment_form($comments_args); ?>
+
+</section>

@@ -207,6 +207,11 @@ h3 {
   margin-left: 40px;
 }
 
+h2.comment-author {
+  color: white;
+  padding: 0 0 5px 0;
+}
+
 /**** Forms, inputs, etc ***/
 input, select, textarea, button {
     color: #a09f9f;
@@ -456,6 +461,37 @@ nav#bottom {
   padding: 40px 0 20px 0;
 }
 
+/*blog comments*/
+ul.children {
+  margin-left: 30px;
+}
+
+.comment-body {
+  clear: both;
+  padding: 10px 0;
+  margin: 0 0 15px 0;
+  border-left: 2px solid white;
+  background-image: -ms-linear-gradient(left, #2B2B2B 0%, #000000 100%);
+  background-image: -moz-linear-gradient(left, #2B2B2B 0%, #000000 100%);
+  background-image: -o-linear-gradient(left, #2B2B2B 0%, #000000 100%);
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #2B2B2B), color-stop(1, #000000));
+  background-image: -webkit-linear-gradient(left, #2B2B2B 0%, #000000 100%);
+  background-image: linear-gradient(to right, #2B2B2B 0%, #000000 100%);
+}
+
+.comment-text {
+  margin-left: 10px;
+}
+
+.comment-meta {
+  font-size: 10pt;
+  padding-bottom: 5px;
+}
+
+textarea#comment {
+  width: 100%;
+}
+
 a.social-icon {
   padding: 0 5px;
 }
@@ -492,6 +528,9 @@ ul.sub-menu li {
 
 .product-search input[type=text] {
   width: 145px;
+}
+
+input[type=text] {
   background-color: #2b2b2b;
   border: 1px solid #333;
   font-size: 12pt;
@@ -499,9 +538,25 @@ ul.sub-menu li {
   font-family: "proxima-nova", helvetica neu, helvetica, sans-serif;
 }
 
-.product-search input[type=submit] {
+input[type=submit] {
   background-color: #000;
   color: #a09f9f;
+  border: 2px solid #a09f9f;
+  font-size: 14pt;
+  padding: 1px 5px;
+  font-family: "proxima-nova", helvetica neu, helvetica, sans-serif;
+}
+
+input[type=submit]:hover {
+  color: #c69b2d;
+  border: 2px solid #c69b2d;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+  }
+
+.product-search input[type=submit] {
   border: 1px solid #a09f9f;
   display: inline-block;
   font-size: 12pt;
@@ -510,7 +565,6 @@ ul.sub-menu li {
 }
 
 .product-search input[type=submit]:hover {
-  color: #c69b2d;
   border: 1px solid #c69b2d;
   -webkit-transition: 1s;
   -moz-transition: 1s;
