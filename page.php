@@ -10,15 +10,12 @@
 		
 			<?php the_content(); ?>
 			
-			<?php comments_template( '', true ); // Remove if you don't want comments ?>
 			
 			<br class="clear">
 			
 			<?php edit_post_link(); ?>
 			
-		</article>
-		<!-- /article -->
-		
+		</article>		
 	<?php endwhile; ?>
 	
 	<?php else: ?>
@@ -34,6 +31,4 @@
 	<?php endif; ?>
 	
 	</section>
-	<!-- /section -->
-
 <?php get_footer(); ?>
