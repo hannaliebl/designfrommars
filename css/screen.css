@@ -176,6 +176,12 @@ h3 {
   transition: 1s;
 }
 
+.meta {
+  font-size: 12pt;
+  font-weight: 700;
+  color: #e0e0e0;
+}
+
 /**** Forms, inputs, etc ***/
 input, select, textarea, button {
     color: #a09f9f;
@@ -245,7 +251,7 @@ span.price {
   -webkit-font-smoothing: antialiased;
 }
 
-.icon-facebook, .icon-twitter, .icon-menu, .icon-cart, .icon-mail, .icon-arrow-down {
+.icon-facebook, .icon-twitter, .icon-menu, .icon-cart, .icon-mail, .icon-arrow-down, .icon-close {
   font-family: 'icomoon';
   speak: none;
   font-style: normal;
@@ -538,6 +544,10 @@ ul.page-numbers li {
   padding: 5px;
 }
 
+article.blog-entry {
+  margin-bottom: 30px;
+}
+
 footer#main {
   background: #2b2b2b;
 }
@@ -606,11 +616,6 @@ div.thumbnails {
     margin: 0;
     padding: 0;
   }
-/*
-  .filter-products {
-    background-color: #2b2b2b;
-    padding: 0 0 15px 0;
-  }*/
 
   #tab-reviews, #tab-additional_information, #tab-description {
     clear: both;

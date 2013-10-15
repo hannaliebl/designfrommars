@@ -2,25 +2,39 @@
 <section class="content container" id="intro" role="main">
             <div class="container960 clearfix">
 
-            <div class="onethird">
-                <h1>LOREM IPSUM</h1>
-            </div>
-            <div class="twothirds">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
+    <?php if (have_posts()) : ?>
+    <?php while (have_posts()) : the_post(); ?>
 
-            <div class="onethird">
-                <h1>DOLOR SIT</h1>
-            </div>
-            <div class="twothirds">
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-            </div>
-            <div class="onethird">
-                <h1>CONSECTETUR</h1>
-            </div>
-            <div class="twothirds">
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-            </div>
+      <article class="blog-entry" id="post-<?php the_ID(); ?>">
+        <header>
+          <a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">
+            <h1><?php the_title(); ?></h1>
+          </a>
+          <span class="meta"><?php the_time('F j, Y') ?> Posted in: <?php the_category(', '); ?>, <?php the_tags('Tagged: ', ', ', ''); ?> by <?php the_author() ?></span> 
+        </header>
+        <?php the_content('Read the rest of this entry &raquo;'); ?>
+        <hr>
+          <span class="comments-link">
+            <a href="<?php comments_link(); ?>"><?php comments_number( '0 Comments', '1 Comment', '% Comments'); ?></a> | <a href="<?php the_permalink() ?>#respond">Leave a Comment</a>
+            <?php edit_post_link('Edit Post', ' | ' ); ?>
+          </span>
+      </article>
+
+    <?php endwhile; ?>
+
+    <nav>
+      <div class="next float"><?php next_posts_link('&laquo; Older Entries') ?></div>
+      <div class="previous"><?php previous_posts_link('Newer Entries &raquo;') ?></div>
+    </nav>
+
+  <?php else : ?>
+
+    <h2>Not Found</h2>
+    <p>Sorry, but you are looking for something that isn't here.</p>
+    <?php get_search_form(); ?>
+
+  <?php endif; ?>
+
             </div>
         </section>
 		<section class="content container" id="store">
