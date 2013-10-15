@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <section class="content container" id="intro" role="main">
-            <div class="container960 clearfix">
+            <div class="container960">
 
     <?php if (have_posts()) : ?>
     <?php while (have_posts()) : the_post(); ?>
@@ -22,9 +22,9 @@
 
     <?php endwhile; ?>
 
-    <nav>
-      <div class="next float"><?php next_posts_link('&laquo; Older Entries') ?></div>
-      <div class="previous"><?php previous_posts_link('Newer Entries &raquo;') ?></div>
+    <nav class="center-text blog-nav">
+      <div class="left"><?php next_posts_link('<span class="icon-arrow-left" aria-hidden="true"></span> OLDER POSTS') ?></div>
+      <div class="right"><?php previous_posts_link('NEWER POSTS <span class="icon-arrow-right" aria-hidden="true">') ?></div>
     </nav>
 
   <?php else : ?>
@@ -37,35 +37,6 @@
 
             </div>
         </section>
-		<section class="content container" id="store">
-            <h1>RECENT PRODUCTS</h1>
-            <aside>
-                <a href="#"><h1 class="shopall">SHOP ALL PRODUCTS</h1></a>
-            </aside>
-<article class="products clearfix">
-                <ul class="center-text">
-                <?php
-            $args = array( 'post_type' => 'product', 'stock' => 1, 'posts_per_page' => 6, 'orderby' =>'date','order' => 'DESC' );
-            $loop = new WP_Query( $args );
-            while ( $loop->have_posts() ) : $loop->the_post(); global $product; ?>
-                    <li class="onethird">
-                        <a id="id-<?php the_id(); ?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-
-                            <?php if (has_post_thumbnail( $loop->post->ID )) echo get_the_post_thumbnail($loop->post->ID, 'shop_catalog'); else echo '<img src="'.woocommerce_placeholder_img_src().'" alt="Placeholder" width="380px" height="380px" />'; ?>
-
-                            <h1><?php the_title(); ?></h1>
-
-                        	   <h2><?php echo $product->get_price_html(); ?></h2>
-
-                        </a>
-
-                        <?php woocommerce_template_loop_add_to_cart( $loop->post, $product ); ?>
-                    </li>
-        <?php endwhile; ?>
-        <?php wp_reset_query(); ?>
-
-    </ul>
-</article>
-</section>
+		
 
 <?php get_footer(); ?>

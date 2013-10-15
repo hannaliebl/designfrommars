@@ -30,6 +30,10 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
+strong {
+  font-weight: 600;
+}
+
 img {
   max-width: 100%;
   vertical-align: baseline;
@@ -182,6 +186,27 @@ h3 {
   color: #e0e0e0;
 }
 
+.blog-nav {
+  font-size: 16pt;
+  font-weight: 600;
+}
+
+.blog-entry > h1 {
+  margin: 10px 0 5px 0;
+  padding: 0;
+  font-size: 20pt;
+}
+
+.blog-entry > ul {
+  list-style-type: disc;
+  margin-left: 40px;
+}
+
+.blog-entry > ol {
+  list-style-type: decimal;
+  margin-left: 40px;
+}
+
 /**** Forms, inputs, etc ***/
 input, select, textarea, button {
     color: #a09f9f;
@@ -251,7 +276,7 @@ span.price {
   -webkit-font-smoothing: antialiased;
 }
 
-.icon-facebook, .icon-twitter, .icon-menu, .icon-cart, .icon-mail, .icon-arrow-down, .icon-close {
+.icon-facebook, .icon-twitter, .icon-menu, .icon-cart, .icon-mail, .icon-arrow-down, .icon-close, .icon-arrow-left, .icon-arrow-right {
   font-family: 'icomoon';
   speak: none;
   font-style: normal;
@@ -272,6 +297,10 @@ span.price {
 
 .icon-arrow-down {
   font-size: 18pt;
+}
+
+.icon-arrow-left, .icon-arrow-right {
+  font-size: 14pt;
 }
 
 .icon-facebook:before {
@@ -296,6 +325,16 @@ span.price {
 
 .icon-arrow-down:before {
   content: "\25";
+}
+
+.icon-close:before {
+  content: "\22";
+}
+.icon-arrow-right:before {
+  content: "\26";
+}
+.icon-arrow-left:before {
+  content: "\27";
 }
 
 .mobile-menu-container {
@@ -903,12 +942,6 @@ nav#main li {
     text-align: left;
   }
 
-  /* line 153, ../sass/layout.scss */
-/*  #header_description h1 {
-    font-size: 55pt;
-    line-height: 60pt;
-  }*/
-
 #home_header_description h1 {
   font-size: 58pt;
   font-weight: 700;
@@ -949,7 +982,7 @@ nav#main li {
   float: right;
 }
 
-  aside {
+aside {
     float: right;
   }
 
