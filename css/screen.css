@@ -30,6 +30,15 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
+/*override woocommerce's lightbox styles...*/
+.pp_content_container {
+  background-color: black !important;
+}
+
+div.pp_overlay {
+  background-color: #303030 !important;
+}
+
 strong {
   font-weight: 600;
 }
@@ -212,6 +221,19 @@ h2.comment-author {
   padding: 0 0 5px 0;
 }
 
+.star-1, .star-2, .star-3, .star-4, .star-5 {
+  margin: 0 10px 0 0;
+  padding: 5px 15px;
+  font-size: 20pt;
+  border: 1px solid #dedede;
+}
+
+.star-1.active, .star-2.active, .star-3.active, .star-4.active, .star-5.active {
+  background-color: #c69b2d;
+  color: #000;
+  border: 1px solid #fff;
+}
+
 /**** Forms, inputs, etc ***/
 input, select, textarea, button {
     color: #a09f9f;
@@ -281,7 +303,7 @@ span.price {
   -webkit-font-smoothing: antialiased;
 }
 
-.icon-facebook, .icon-twitter, .icon-menu, .icon-cart, .icon-mail, .icon-arrow-down, .icon-close, .icon-arrow-left, .icon-arrow-right {
+.icon-facebook, .icon-twitter, .icon-menu, .icon-cart, .icon-mail, .icon-arrow-down, .icon-close, .icon-arrow-left, .icon-arrow-right, .icon-star {
   font-family: 'icomoon';
   speak: none;
   font-style: normal;
@@ -340,6 +362,10 @@ span.price {
 }
 .icon-arrow-left:before {
   content: "\27";
+}
+
+.icon-star:before {
+  content: "\28";
 }
 
 .mobile-menu-container {
@@ -466,7 +492,7 @@ ul.children {
   margin-left: 30px;
 }
 
-.comment-body {
+.comment-body, .review-body {
   clear: both;
   padding: 10px 0;
   margin: 0 0 15px 0;
@@ -479,7 +505,7 @@ ul.children {
   background-image: linear-gradient(to right, #2B2B2B 0%, #000000 100%);
 }
 
-.comment-text {
+.comment-text, .review-text {
   margin-left: 10px;
 }
 

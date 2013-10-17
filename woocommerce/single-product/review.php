@@ -15,16 +15,14 @@ global $post;
 $rating = esc_attr( get_comment_meta( $GLOBALS['comment']->comment_ID, 'rating', true ) );
 ?>
 <li itemprop="reviews" itemscope itemtype="http://schema.org/Review" <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
-	<div id="comment-<?php comment_ID(); ?>" class="comment_container">
+	<div id="comment-<?php comment_ID(); ?>" class="review-body">
 
-		<?php echo get_avatar( $GLOBALS['comment'], $size='60' ); ?>
-
-		<div class="comment-text">
+		<div class="review-text">
 
 			<?php if ( get_option('woocommerce_enable_review_rating') == 'yes' ) : ?>
 
 				<div itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating" class="star-rating" title="<?php echo sprintf(__( 'Rated %d out of 5', 'woocommerce' ), $rating) ?>">
-					<span style="width:<?php echo ( intval( get_comment_meta( $GLOBALS['comment']->comment_ID, 'rating', true ) ) / 5 ) * 100; ?>%"><strong itemprop="ratingValue"><?php echo intval( get_comment_meta( $GLOBALS['comment']->comment_ID, 'rating', true ) ); ?></strong> <?php _e( 'out of 5', 'woocommerce' ); ?></span>
+					<span style="width:<?php echo ( intval( get_comment_meta( $GLOBALS['comment']->comment_ID, 'rating', true ) ) / 5 ) * 100; ?>%"><?php _e( 'Rated ', 'woocommerce' ); ?><strong itemprop="ratingValue"><?php echo intval( get_comment_meta( $GLOBALS['comment']->comment_ID, 'rating', true ) ); ?></strong> <?php _e( 'out of 5', 'woocommerce' ); ?></span>
 				</div>
 
 			<?php endif; ?>
