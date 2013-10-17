@@ -9,6 +9,8 @@
 		$(this).find('ul').fadeToggle("200", "linear");
 	});
 });
+;$("li.chosen a").prepend('<span class="icon-close" aria-hidden="true"></span> ');
+
 
 $(function() {
 	

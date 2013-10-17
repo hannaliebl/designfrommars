@@ -30,7 +30,7 @@ get_header('shop'); ?>
 		<?php do_action( 'woocommerce_archive_description' ); ?>
 
 		<nav class="onefourth filter-products">
-			<h2>Filter Products: <span class="icon-close" aria-hidden="true"></span></h2>
+			<h2>Filter Products:</h2>
 			<?php dynamic_sidebar( 'widget-area-2' ); ?>
 		</nav>
 
