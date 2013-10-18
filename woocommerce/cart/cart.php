@@ -14,10 +14,13 @@ global $woocommerce;
 $woocommerce->show_messages();
 ?>
 
-<section class="twothirds">
+
 <?php do_action( 'woocommerce_before_cart' ); ?>
 
 <form action="<?php echo esc_url( $woocommerce->cart->get_cart_url() ); ?>" method="post">
+
+<section class="twothirds">
+
 
 <?php do_action( 'woocommerce_before_cart_table' ); ?>
 
@@ -145,8 +148,6 @@ $woocommerce->show_messages();
 
 
 <?php do_action( 'woocommerce_after_cart_table' ); ?>
-
-</form>
 </section>
 
 <div class="cart-collaterals onethird">
@@ -156,8 +157,21 @@ $woocommerce->show_messages();
 	<?php woocommerce_cart_totals(); ?>
 
 	<?php woocommerce_shipping_calculator(); ?>
+	<div class="second-proceed-checkout">
+	<input type="submit" class="checkout-button button alt" name="proceed" value="<?php _e( 'Proceed to Checkout &rarr;', 'woocommerce' ); ?>" />
+
+				<?php do_action('woocommerce_proceed_to_checkout'); ?>
+
+				<?php $woocommerce->nonce_field('cart') ?>
+	</div>
+
 
 </div>
+
+</form>
+
+
+
 
 
 
