@@ -351,7 +351,7 @@ input[name="update_cart"] {
 }
 
 /*quantities*/
-.woocommerce .quantity, .woocommerce-page .quantity, .woocommerce #content .quantity, .woocommerce-page #content .quantity {
+.woocommerce .quantity, .quantity, .woocommerce-page .quantity, .woocommerce #content .quantity, .woocommerce-page #content .quantity {
 width: 60px;
 position: relative;
 margin: 0 auto;
@@ -359,7 +359,11 @@ overflow: hidden;
 zoom: 1;
 }
 
-.woocommerce .quantity .plus, .woocommerce-page .quantity .plus, .woocommerce #content .quantity .plus, .woocommerce-page #content .quantity .plus, .woocommerce .quantity .minus, .woocommerce-page .quantity .minus, .woocommerce #content .quantity .minus, .woocommerce-page #content .quantity .minus {
+#content div.quantity.buttons_added {
+  margin: 0;
+}
+
+.woocommerce .quantity .plus, .woocommerce-page .quantity .plus, .woocommerce #content .quantity .plus, .woocommerce-page #content .quantity .plus, .woocommerce .quantity .minus, .woocommerce-page .quantity .minus, .woocommerce #content .quantity .minus, .woocommerce-page #content .quantity .minus, input.minus, input.plus {
 display: block;
 padding: 0;
 margin: 0;
@@ -387,13 +391,13 @@ margin-right: .25em;
 margin-bottom: 0;
 }
 
-.woocommerce .quantity input.qty, .woocommerce-page .quantity input.qty, .woocommerce #content .quantity input.qty, .woocommerce-page #content .quantity input.qty {
+.woocommerce .quantity input.qty, .woocommerce-page .quantity input.qty, .woocommerce #content .quantity input.qty, .woocommerce-page #content .quantity input.qty, input.input-text.qty.text {
 width: 65px;
 font-size: 18px;
 vertical-align: middle;
 }
 
-.woocommerce .quantity .plus, .woocommerce-page .quantity .plus, .woocommerce #content .quantity .plus, .woocommerce-page #content .quantity .plus {
+.woocommerce .quantity .plus, .woocommerce-page .quantity .plus, .woocommerce #content .quantity .plus, .woocommerce-page #content .quantity .plus, input.plus {
 top: 0;
 right: 0;
 }
@@ -436,14 +440,14 @@ td.product-total {
   width: 25%;
 }
 
-/***** Outlined "button"/important link styles *****/
-/*.button {
+/***** Outlined "button" for add to cart*****/
+.button {
   color: #a09f9f;
   border: 2px solid #a09f9f;
   display: inline-block;
   padding: 4px;
   margin: 3px 0;
-}*/
+}
 
 input.checkout-button {
   border: 4px solid #fff;
