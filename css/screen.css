@@ -273,6 +273,7 @@ label {
   margin-right: 10px;
   width: 200px;
   text-align: left;
+  clear: both;
 }
 
 label.screen-reader-text {
@@ -489,6 +490,7 @@ input.checkout-button:hover {
   border: 2px solid #a09f9f;
   display: inline-block;
   margin: 15px 0;
+  width: inherit;
 }
 
 .add_to_cart_button {
@@ -1141,7 +1143,7 @@ ul.hidden {
 nav#main li {
     width: 16.6%;
     font-size: 16.5pt;
-    text-align: left;
+    text-align: center;
   }
 
 #home_header_description h1 {
@@ -1175,6 +1177,9 @@ nav#main li {
   text-shadow: 2px 0px 1px black;
 }
 
+#commentform label {
+  float: none;
+}
 
 .left {
   float: left;
